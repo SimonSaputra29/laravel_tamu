@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::post('simpan-bukutamu', [TamuController::class, 'simpanTamu']) ->name('simpan-bukutamu');
 
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [AdminTamuController::class, 'index'])->name('admin-tamu');
     
     // Admin
     Route::get('admin/tamu',[AdminTamuController::class, 'index'])->name('admin-tamu');

@@ -10,7 +10,15 @@
                     @csrf
                     <div class="form-group">
                       <label for="nama">Nama</label>
-                      <input type="text" class="form-control" name="nama" id="nama" aria-describedby="nama">
+                      <input type="text" name="nama" onkeypress="return hanyaHuruf(event);" class="form-control"required>
+                    <script type="text/javascript">
+                    function hanyaHuruf(evt) {
+                      var charCode = (evt.which) ? evt.which : event.keyCode 
+                    if (charCode > 31 &&  (charCode < 48 || charCode > 57))	
+                      return true;
+                      return false;
+                    }
+                    </script>
                     </div>
                     <div class="form-group">
                       <label for="telepon">Telepon</label>

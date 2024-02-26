@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\BukuTamu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;    
 
 class TamuController extends Controller
 {
     public function index() {
-        $data = user::all();
+        $data = BukuTamu::all();
 
         return view('Admin.Tamu.index', compact('data'));
     }

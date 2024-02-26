@@ -22,7 +22,7 @@
                 <th scope="col" style="width : 15%">Aksi</th>
               </tr>
             </thead>
-            <tbody>
+            <t`ody>
                 @foreach($data as $key => $item)
               <tr>
                 <th scope="row">{{$key + 1 }}</th>
