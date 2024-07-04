@@ -18,6 +18,8 @@
                 <th scope="col">Nama</th>
                 <th scope="col">Telepon</th>
                 <th scope="col">Alamat</th>
+                <th scope="col">Keperluan</th>
+                <th scope="col">Tanggal</th>
                 <th scope="col">Email</th>
                 <th scope="col" style="width : 15%">Aksi</th>
               </tr>
@@ -29,17 +31,20 @@
                 <td>{{$item->nama}}</td>
                 <td>{{$item->tlp}}</td>
                 <td>{{$item->alamat}}</td>
+                <td>{{$item->keperluan}}</td>
+                <td>{{ \Carbon\Carbon::parse($item->created_at)->timezone('Asia/Jakarta')->locale('id')->translatedFormat('l, d F Y H:i:s') }}</td>
                 <td>{{$item->email}}</td>
                 <td>
                   <div class="row">
                     <div class="col-4">
-                      <a href="{{url('admin/form-edit', $item->id)}}" class="btn btn-warning">Edit</a>
+                      <a href="{{url('admin/form-edit', $item->id)}}" onclick="return confirm('Serius Mau Berubah?');" class="btn btn-warning">Ubah</a>
                     </div>
                     <div class="col-4">
-                      <form action="{{url('admin/hapus-data')}}" method="post">
+                      <form action="{{url('admin/hapus-data')}}" onclick="return confirm('Mau Di Ilangin?');" method="post">
                         @csrf
-                        <input type="hidden" name="id" value="{{$item->id}}">
+                        <input type="hidden" name="id" value="{{$item->id}}" >
                         <button type="submit" class="btn btn-danger">Hapus</button>
+                        
                     </form>
                     </div>
                   </div>

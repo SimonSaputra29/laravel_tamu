@@ -23,12 +23,14 @@ class TamuController extends Controller
         $nama       = $request -> nama;  
         $telepon    = $request -> telepon;
         $alamat     = $request -> alamat;
+        $keperluan     = $request -> keperluan;
         $email      = $request -> email;
 
         $data = new BukuTamu;
         $data ->nama = $nama;
         $data ->tlp = $telepon;
         $data ->alamat = $alamat;
+        $data ->keperluan = $keperluan;
         $data ->email = $email;
         $data ->password = Hash::make('rahasia');
 
@@ -47,12 +49,14 @@ class TamuController extends Controller
         $nama = $request->nama;
         $telepon = $request->telepon;
         $alamat = $request->alamat; 
+        $keperluan = $request->keperluan; 
         $email = $request->email;
 
         $data = BukuTamu::find($id);    
         $data ->nama = $nama;
         $data ->tlp = $telepon;
         $data ->alamat = $alamat;
+        $data ->keperluan = $keperluan;
         $data ->email = $email;
         $data ->update();
 

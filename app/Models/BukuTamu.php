@@ -14,6 +14,7 @@ class BukuTamu extends Model
         'nama',
         'tlp',
         'alamat',
+        'keperluan',
         'email',
         'password',
         'updated_at',

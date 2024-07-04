@@ -13,6 +13,7 @@ class TamuController extends Controller
         $nama               = $request->nama;
         $telepon            = $request->telepon;
         $alamat             = $request->alamat;
+        $keperluan          = $request->keperluan;
         $email              = $request->email;
 
         
@@ -20,6 +21,7 @@ class TamuController extends Controller
         $data ->nama = $nama;
         $data ->tlp = $telepon;
         $data ->alamat = $alamat;
+        $data ->keperluan = $keperluan;
         $data ->email = $email;
         $data ->password = Hash::make('rahasia');
         $data -> save();
