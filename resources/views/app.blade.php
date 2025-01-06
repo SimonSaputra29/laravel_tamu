@@ -9,7 +9,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-            @include('layouts.sidebar')
+        @include('layouts.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -24,7 +24,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                @yield('content')
+                    @yield('content')
                 </div>
                 <!-- /.container-fluid -->
 
@@ -56,24 +56,25 @@
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                </div>  
+                </div>
                 <div class="modal-body">Kalo Mau Keluar Di Persilahkan.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Ngga Jadi</button>
-                    <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a class="btn btn-primary" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> Pake Nanya
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
                 </div>
-                
+
             </div>
         </div>
     </div>
 
     @include('layouts.js')
-    
+
     @yield('script')
 
 </body>
